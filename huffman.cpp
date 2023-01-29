@@ -9,6 +9,7 @@
 #include <tuple>
 
 #include "ApperanceNum.hpp"
+#include "InitHaffmanTree.hpp"
 using namespace std;
 
 string input;
@@ -26,12 +27,9 @@ void InputString()
 }
 
 
-void QueueInput()
-{
-
-}
 
 int main(){
     InputString();
     ApperanceNum(input, AppNum, AppNumpair);
+    InitHaffmanTree(AppNumpair, T);
 }
