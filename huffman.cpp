@@ -14,7 +14,6 @@
 #include "AssignCode.hpp"
 using namespace std;
 
-
 int main(){
     string input;
     ifstream InputFile("input.txt");
@@ -37,9 +36,22 @@ int main(){
 
     AssignCode(T, Pque.top().second);
 
+    map<char, string> EncodeChar;
     for(int i=0; i<InitNodeNum; i++){
         string s = get<3>(T[i]);
-        cout << AppNumpair[i].second << ": " << s << endl;
+        char c = AppNumpair[i].second;
+        EncodeChar[c] = s;
+        cout << c << ": " << s << endl;
     }
+    
+    ofstream OutputFile("output.txt");
+    cout << "IN : "+input << endl;
+    cout << "OUT: ";
+    for(int i=0; i<input.length(); i++){
+        string s = EncodeChar[input[i]];
+        OutputFile << s;
+        cout << s;
+    }
+    cout << endl;
 
 }
