@@ -7,6 +7,8 @@
 #include <set>
 #include <fstream>
 #include <tuple>
+#include <iomanip>
+#include <ios>
 
 #include "ApperanceNum.hpp"
 #include "InitHaffmanTree.hpp"
@@ -37,21 +39,25 @@ int main(){
     AssignCode(T, Pque.top().second);
 
     map<char, string> EncodeChar;
+    int stringlength = 0;
     for(int i=0; i<InitNodeNum; i++){
         string s = get<3>(T[i]);
         char c = AppNumpair[i].second;
         EncodeChar[c] = s;
-        cout << c << ": " << s << endl;
+        cout << c << "(" << right << setw(2) << AppNumpair[i].first << ")"<<": " << s << endl;
+        stringlength += s.length()*AppNumpair[i].first;
     }
+    double strlengthaverage = (double)stringlength/input.length();
+    cout << "AverageLength = " << strlengthaverage << endl;
     
     ofstream OutputFile("output.txt");
-    cout << "IN : "+input << endl;
-    cout << "OUT: ";
-    for(int i=0; i<input.length(); i++){
-        string s = EncodeChar[input[i]];
-        OutputFile << s;
-        cout << s;
-    }
-    cout << endl;
-
+    // cout << "IN : " + input << endl;
+    // cout << "OUT: ";
+    // for(int i=0; i<input.length(); i++){
+    //     string s = EncodeChar[input[i]];
+    //     OutputFile << s;
+    //     cout << s;
+    // }
+    // cout << endl;
+    return 0;
 }
