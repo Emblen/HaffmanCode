@@ -1,7 +1,7 @@
 using namespace std;
 
 void MakeHuffmanTree(priority_queue<pair<int,int>, vector<pair<int,int>>, 
-greater<pair<int, int>>> pque, vector<tuple<int, int, vector<int>, string>> &T, int initnodenum){
+greater<pair<int, int>>> &pque, vector<tuple<int, int, vector<int>, string>> &T, int initnodenum){
     
     for(int i=0; i<initnodenum; i++) pque.push({get<1>(T[i]), i}); //初期ノードについて、pair<出現回数, ノード番号>をキューに追加する
     

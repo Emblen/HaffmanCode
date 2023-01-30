@@ -11,6 +11,7 @@
 #include "ApperanceNum.hpp"
 #include "InitHaffmanTree.hpp"
 #include "MakeHuffmanTree.hpp"
+#include "AssignCode.hpp"
 using namespace std;
 
 
@@ -34,6 +35,11 @@ int main(){
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int, int>>> Pque;
     MakeHuffmanTree(Pque, T, InitNodeNum);
 
+    AssignCode(T, Pque.top().second);
 
-    return 0;
+    for(int i=0; i<InitNodeNum; i++){
+        string s = get<3>(T[i]);
+        cout << AppNumpair[i].second << ": " << s << endl;
+    }
+
 }
