@@ -10,7 +10,7 @@ void ApperanceNum(string input, map<char, int> &appnum, vector<pair<int ,char>> 
         appnumpair.push_back({v.second, v.first});
     }
     sort(appnumpair.begin(), appnumpair.end());
-    for(auto v:appnumpair){
-        cout << v.first << " " << v.second << endl;
-    }
+    // for(auto v:appnumpair){
+    //     cout << v.first << " " << v.second << endl;
+    // }
 }
