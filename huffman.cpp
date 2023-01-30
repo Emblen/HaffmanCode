@@ -53,11 +53,11 @@ int main(){
     ofstream OutputFile("output.txt");
     // cout << "IN : " + input << endl;
     // cout << "OUT: ";
-    // for(int i=0; i<input.length(); i++){
-    //     string s = EncodeChar[input[i]];
-    //     OutputFile << s;
-    //     cout << s;
-    // }
+    for(int i=0; i<input.length(); i++){
+        string s = EncodeChar[input[i]];
+        OutputFile << s;
+        // cout << s;
+    }
     // cout << endl;
     return 0;
 }
