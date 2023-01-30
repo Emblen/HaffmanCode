@@ -15,17 +15,4 @@ greater<pair<int, int>>> pque, vector<tuple<int, int, vector<int>, string>> &T, 
         T[i] = make_tuple(i, node1.first+node2.first, tmp, "");
         pque.push({node1.first+node2.first, i}); 
     }
-
-
-    // while(pque.size()>1){
-    //     pair<int, int> node1 = pque.top();
-    //     pque.pop();
-    //     pair<int, int> node2 = pque.top();
-    //     pque.pop();
-    //     vector<int> tmp = {node1.second, node2.second};
-    //     initnodenum++;
-    //     cout << initnodenum << endl;
-    //     T[initnodenum] = make_tuple(initnodenum, node1.first+node2.first, tmp, "");
-    //     pque.push({node1.first+node2.first, initnodenum}); 
-    // }
 }

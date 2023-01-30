@@ -34,18 +34,6 @@ int main(){
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int, int>>> Pque;
     MakeHuffmanTree(Pque, T, InitNodeNum);
 
-    for(int i=0; i<21; i++){
-        cout << get<1>(T[i]) << " " << get<0>(T[i]) << ": ";
-        for(auto v:get<2>(T[i])){
-            cout << v << " ";
-        }
-        cout << endl;
-    }
-    // cout << InitNodeNum << endl;
-    // cout << get<0>(T[16]) << endl;
-    // cout << AppNumpair.size() << endl;
-    // for(int i=0; i<AppNumpair.size(); i++){
 
-    // }
     return 0;
 }
