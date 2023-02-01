@@ -14,6 +14,7 @@
 #include "InitHaffmanTree.hpp"
 #include "MakeHuffmanTree.hpp"
 #include "AssignCode.hpp"
+#include "AssignCodeBFS.hpp"
 using namespace std;
 
 int main(){
@@ -36,15 +37,25 @@ int main(){
     priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int, int>>> Pque;
     MakeHuffmanTree(Pque, T, InitNodeNum);
 
+
+    //BFSの場合
+    // queue<int> vertex;
+    // AssignCodeBFS(T, vertex, Pque.top().second);
+    //
+    //DFSの場合
     AssignCode(T, Pque.top().second);
+    //
 
     map<char, string> EncodeChar;
     int stringlength = 0;
+
+    ofstream EncodeResult("code.txt");
     for(int i=0; i<InitNodeNum; i++){
         string s = get<3>(T[i]);
         char c = AppNumpair[i].second;
         EncodeChar[c] = s;
         cout << c << "(" << right << setw(2) << AppNumpair[i].first << ")"<<": " << s << endl;
+        EncodeResult << c << " " << s << endl;
         stringlength += s.length()*AppNumpair[i].first;
     }
     double strlengthaverage = (double)stringlength/input.length();
@@ -55,5 +66,4 @@ int main(){
         string s = EncodeChar[input[i]];
         OutputFile << s;
     }
-    return 0;
 }
